@@ -1,0 +1,35 @@
+package com.ouyue.ji
+
+import androidx.compose.ui.graphics.Color
+
+internal val BrandBlue = Color(0xFF2F7BFF)
+internal val BrandBlueDark = Color(0xFF1D5FEF)
+internal val PageBackground = Color(0xFFF7F9FC)
+internal val CardBackground = Color(0xFFFFFFFF)
+internal val CardBorder = Color(0xFFE8EEF8)
+internal val PrimaryText = Color(0xFF111827)
+internal val SecondaryText = Color(0xFF64748B)
+internal val TertiaryText = Color(0xFF94A3B8)
+
+internal val HighImportance = Color(0xFFFF6B6B)
+internal val HighImportanceBackground = Color(0xFFFFF0F0)
+internal val Urgent = Color(0xFFFF9F43)
+internal val UrgentBackground = Color(0xFFFFF4E6)
+internal val NormalTask = Color(0xFF3B82F6)
+internal val NormalTaskBackground = Color(0xFFEFF6FF)
+internal val Completed = Color(0xFF22C55E)
+internal val CompletedBackground = Color(0xFFECFDF5)
+internal val Important = Color(0xFF8B5CF6)
+internal val ImportantBackground = Color(0xFFF4EEFF)
+
+internal val Study = Color(0xFF6F73A8)
+internal val StudyBackground = Color(0xFFF4F5FB)
+internal val Work = Color(0xFF5878A6)
+internal val WorkBackground = Color(0xFFF3F7FC)
+internal val Life = Color(0xFF5D8C76)
+internal val LifeBackground = Color(0xFFF3FAF7)
+internal val Other = Color(0xFF9A7A45)
+internal val OtherBackground = Color(0xFFFBF7EF)
+internal val TabInactiveBackground = Color(0xFFF1F5FB)
+internal val ProGold = Color(0xFFB7791F)
+internal val ProGoldBackground = Color(0xFFFFF7E6)

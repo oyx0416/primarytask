@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2878f0">
+  <meta name="description" content="记 App 源码数据处理说明。">
+  <link rel="canonical" href="https://primarytask.top/privacy/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <title>隐私说明 - 记 App</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header"><div class="shell nav-row"><a class="brand" href="/"><img src="/assets/logo/ji-mark.svg" alt=""><span>记</span></a><button class="menu-button" type="button" aria-label="展开导航" aria-expanded="false" data-menu-button>菜单</button><nav class="nav-links" aria-label="主导航" data-menu><a href="/">首页</a><a href="/download/">下载</a><a href="/privacy/">隐私说明</a></nav></div></header>
+  <main id="main">
+    <section class="page-hero"><div class="shell"><p class="eyebrow">源码数据处理说明</p><h1>隐私说明</h1><p>本页依据仓库源码描述应用和后端可确认的数据流，不代表任何特定部署的完整隐私政策。</p></div></section>
+    <section class="content"><div class="shell legal-layout">
+      <article class="legal-card">
+        <section id="operator"><h2>1. 运营者与部署差异</h2><p>本仓库不能确认实际服务的运营主体、联系方式、服务器所在地、反向代理或云平台配置。公开部署者应在提供服务前补充真实运营者信息和联系渠道，并按实际部署更新本说明。页面所列站点备案信息不用于推断运营者身份。</p></section>
+        <section id="local-data"><h2>2. 设备本地数据</h2><p>用户手动创建或确认保存的任务存放在 Android 设备本地 Room 数据库。应用内删除操作删除本地任务；应用没有把任务列表同步到后端的功能。应用的 Android Manifest 关闭了系统应用备份。</p></section>
+        <section id="account-data"><h2>3. 匿名账户与服务端记录</h2><p>使用图片识别时，应用向配置的后端请求匿名账户。后端生成账户标识和访问 Token；旧版客户端可能提交 device_id，但当前后端不使用该值选择或刷新账户。客户端通过 Android Keystore 加密保存 Token。后端将账户标识、服务端生成的设备标识、Token 哈希、套餐状态、时间信息及每日识别用量和模型名称存入其配置的 SQLite 数据库。数据库位置由部署配置决定。</p><p>后端源码没有账户注销或服务端数据删除接口，也没有统一的记录保留期限或自动清理策略。应用内删除任务不会删除后端账户或用量记录。具体部署者须说明服务端数据的保留和删除方式。</p></section>
+        <section id="processing"><h2>4. 图片、文本与模型处理</h2><p>用户主动选择并发起图片识别时，应用会缩放、压缩图片并上传到构建配置中的图片解析后端。未另行配置时，源码默认指向 https://api.primarytask.top/parse-image-task。后端会验证图片类型、文件大小和像素数量；源码未见将原始图片写入后端数据库或持久文件的逻辑。</p><p>后端默认示例配置启用模拟模式。若部署者配置真实模型服务，后端会把图片发送到环境变量指定的模型接口。模型服务商、处理地点、留存、训练和日志行为由具体配置及服务条款决定，本仓库无法确认。反向代理、云平台或模型服务商也可能有其自身的日志和留存行为。</p><p>粘贴文本默认在设备本地按规则解析。构建时若设置 AI_TASK_PARSER_URL，文本解析器会把用户粘贴的文本发送到该配置地址；部署者应在其告知中披露该处理。</p></section>
+        <section id="logging"><h2>5. 日志与传输</h2><p>后端源码记录请求耗时、模型名称、响应状态和解析任务数量；模型调用异常可能记录异常堆栈。源码未见主动记录图片内容或 Authorization Token 的日志语句。实际日志仍可能由部署平台、反向代理或模型服务商产生。Release 构建要求解析端点使用 HTTPS；开发构建允许明文流量。</p></section>
+        <section id="before-launch"><h2>6. 上线前需要补充的信息</h2><p>面向公众提供服务前，运营者应依据真实部署补充主体名称、联系渠道、服务器和模型服务信息、数据保存期限、删除申请方式及第三方处理情况。不要把本源码说明当作已完成的正式隐私政策，也不要据此推断仓库演示服务的运营安排。</p></section>
+      </article>
+      <nav class="legal-toc" aria-label="隐私说明目录"><strong>目录</strong><a href="#operator">运营者</a><a href="#local-data">本地数据</a><a href="#account-data">账户记录</a><a href="#processing">内容处理</a><a href="#logging">日志与传输</a><a href="#before-launch">上线前事项</a></nav>
+    </div></section>
+  </main>
+  <footer class="site-footer"><div class="shell"><div class="footer-main"><div><a class="brand" href="/"><img src="/assets/logo/ji-mark.svg" alt=""><span>记</span></a><p class="footer-copy">© 2026 记</p></div><nav class="footer-links"><a href="/terms/">用户协议</a><a href="/changelog/">更新日志</a><a href="/download/">下载</a><span>问题反馈待补充</span></nav></div><div class="beian"><a href="https://beian.miit.gov.cn/" rel="noreferrer" target="_blank">粤ICP备2026087064号-1</a><a class="beian-badge" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44078102441012" rel="noreferrer" target="_blank"><img class="beian-shield" src="/assets/beian/police-badge.png" alt="">粤公网安备44078102441012号</a></div></div></footer>
+  <script src="/assets/js/site.js"></script>
+</body>
+</html>
