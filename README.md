@@ -2,19 +2,19 @@
 
 > **把你看到的信息，变成真正要执行的事情。**
 
-「记」是一款 Android 待办整理应用。把课程通知、工作安排或生活提醒中的截图和文字交给它，提取成可确认、可管理的任务。
+「记」是一款面向学习、工作与生活的 Android AI Todo / Task Management 应用，关注日常 Productivity：把截图和文字里的行动项整理成可确认、可管理的任务。
 
-**[访问官网](https://primarytask.top) · [获取应用与源码构建说明](https://primarytask.top/download/)**
+**[官网](https://primarytask.top) · [获取应用](https://primarytask.top/download/) · [Star ⭐](https://github.com/oyx0416/primarytask)**
 
 **截图 / 文本 → 内容理解 → 生成任务草稿 → 分类、截止时间、重要程度 → 确认保存**
 
 图片由 AI 后端识别；粘贴文本默认在设备本地解析，也可配置远端 AI 文本解析。识别结果会先作为草稿展示，由你确认后再保存。
 
 <p align="center">
+  <img src="website/assets/screenshots/result.jpg" width="180" alt="任务识别结果">
   <img src="website/assets/screenshots/home.jpg" width="180" alt="记的任务首页">
   <img src="website/assets/screenshots/add-task.jpg" width="180" alt="添加任务方式">
   <img src="website/assets/screenshots/recognizing.jpg" width="180" alt="截图识别过程">
-  <img src="website/assets/screenshots/result.jpg" width="180" alt="任务识别结果">
 </p>
 
 ## 适合这样的日常
@@ -35,15 +35,15 @@
 
 | 部分 | 技术与职责 |
 | --- | --- |
-| Android | Kotlin、Jetpack Compose、Room；任务编辑、分类和本地保存 |
-| Backend | FastAPI；图片校验、匿名账户与解析接口 |
-| 模型接口 | OpenAI-compatible 多模态接口；配置示例使用 Qwen-VL（DashScope），默认启用 mock 模式 |
+| Android | Android、Kotlin、Jetpack Compose、Room；Todo 编辑、分类和本地保存 |
+| Backend | Python、FastAPI；图片校验、匿名账户与解析接口 |
+| 模型接口 | Multimodal（多模态）解析；OpenAI-compatible 接口，配置示例使用 Qwen-VL（DashScope），默认启用 mock 模式 |
 
 Qwen 模型、API 端点和密钥由后端部署者配置；实际服务提供方取决于部署设置。不要将服务端 API Key 写入 Android 配置、源码或 APK。
 
 ## 获取与运行
 
-- [GitHub 源码仓库](https://github.com/oyx0416/ji)
+- [GitHub 源码仓库](https://github.com/oyx0416/primarytask)
 - [项目主页](https://primarytask.top/)
 - [获取应用与源码构建说明](https://primarytask.top/download/)
 
